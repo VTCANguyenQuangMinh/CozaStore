@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+.container {
+    margin: 5% auto 15% auto;
+    width: 35%;
+    height: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin: 15px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+  
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+  
+label {
+    padding: 12px;
+    display: inline-block;
+    margin-top: 6px;
+}
+  
+.col-75 > input[type=text], select, input[type=password], input[type=email]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.error{
+    padding-top: 15px;
+    color: red;
+}
+
+.submit{
+    padding-top: 25px;
+    width: 40%;
+    margin: auto;
+}
+
+.sub{
+    background-color: #f7d749;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+}
+
+.sub.active{
+    border: #8cdcfe;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shotcut icon" href="http://vtc.ac.vn/wp-content/uploads/2018/02/icon-1515340988.png" sizes="192x192">
+<title>Admin-Tiki-Minh</title>
+<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
+    integrity='sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4'crossorigin= "anonymous">
+    <link rel="stylesheet" type="text/css" href="css/cssforAdmin.css">
+</head>
+<body>
+
+<div class="parallax ctn1" >
+	<div class="box-ctn" style="line-height: 630px;  background-color: rgba(0,0,0,0.1);height: 630px;">
+        <h1 style="line-height: 630px">WELLCOME ADMIN</h1>
+    </div>
+</div>
+
+<div class="Admin_content">
+    Objectives:
+    1. Design Database with NoSQL
+    2. Implement NoSQL with MongoDB
+    3. Using express.js to build web application
+    4. Using pug view engine
+</div>
+
+<div class="parallax ctn2">
+	<div class="box-ctn">
+    <a href="editProduct"><div class="box1-ctn">Show products</div></a>
+    </div>
+</div>
+
+<div class="Admin-content-02">
+    <div>
+        Admin tasks:
+        o Input products information
+        o Update product information
+        o Show products
+    </div>
+</div>
+
+<div class="parallax ctn3">
+	<div class="box-ctn">
+        <div class="box2-ctn">
+            <div class="dropdown">
+                <button class="dropbtn">Category manager</button>
+                <div class="dropdown-content">
+                <a href="#">Show categories</a>
+                <a href="addCategory">Add new category</a>
+                <a href="#">Update category</a>
+                <a href="#">Delete category</a>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="box-ctn">
+        <a href="#"><div class="box2-ctn">Show customers info</div></a>
+    </div>
+    <div class="box-ctn">
+        <a href="#"><div class="box2-ctn">Dashboard</div></a>
+    </div>
+</div>
+
+<div class="Admin_content">
+    Student must design and develop a fashion database which store data like demo.
+The database must include business information requirements 
+</div>
+
+<div class="parallax ctn3">
+	<div class="box-ctn">
+        <a href="addProduct"><div class="box2-ctn">Add new product</div></a>
+    </div>
+    <div class="box-ctn">
+        <a href="editProduct"><div class="box2-ctn">Update product</div></a>
+    </div>
+    <div class="box-ctn">
+        <a href="editProduct"><div class="box2-ctn">Delete product</div></a>
+    </div>
+</div>
+
+<div class="Admin_content">
+    Student must input at least 10 categories, 100 products, 50 customers and 50
+    orders.
+</div>
+
+<div class="parallax ctn5">	
+    <div class="box-ctn" style="font-size: 35px;">
+        <a href="#">
+            <div class="box2-ctn box3-ctn" style="left: 32%; width: 500px; color: #151316;text-shadow: 0px 0px 5px white;">Process Shopping Cart</div>
+        </a>
+    </div>
+</div>
+
+<div class="Admin_content">
+    <div>
+    • Search products
+    o By name
+    o By category, name
+    o By category, name, and price range
+    </div>
+</div>
+
+<div class="parallax ctn4">
+	<div class="box-ctn" style="height: 630px;">
+        <div><button class="box1-ctn" onclick= "document.getElementById('id01').style.display='block'">LOG OUT</button></div>
+    </div>
+</div>
+<div id="id01" class="modal">
+    <div class="modal-content">
+        <div class="contain" style="background-color:#f1f1f1">
+            <h4 style="text-align:center; margin-top: 40px;">Are you sure you want to log out?</h4>
+            <div style="display: flex; margin: 40px;">
+                <div style="width:100%;margin: 15px;"><button style="width:100%" class="btn" type="button" onclick="document.getElementById('id01').style.display='none'">Cancel</button></div>
+                <div style="width:100%;margin: 15px;"><a href="../Controler/Logout"><button class="btn btn-danger" style="width:100%">Log out</button></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+</script>
+
+<div class="Admin_content" style="height: 150px; padding-top: 70px; line-height: 0;">
+    • Database must have actual Customer, Category, Product, Order infomation
+    like in real website
+    <div style="padding-top: 25px;">
+        • Products can have multiple images, sizes and colors
+    </div>
+    <div style="padding-top: 25px;">
+        • Customers can have many shipping address but choose only for each order
+    </div>
+</div>
+
+
+</body>
+</html>

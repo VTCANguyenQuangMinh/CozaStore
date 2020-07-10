@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+<link rel="stylesheet" href="css\cssforAddPr.css">
+<title>Add new category</title>
+</head>
+<body>  
+
+<div class="container">
+  <div class="center">
+    <h1>Add new category</h1>
+  </div>
+  <br><br>
+  <form method="post" action="addCategory" class="needs-validation">  
+      <div class="row">
+        <div class="col-25">
+          <label for="name">Name category:</label>
+        </div>
+        <div class="col-75">
+          <input type="text" name="name" id="name" value="<%= nameCate %>" placeholder="Enter category name">
+          <span class="error"><%= Err %></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="descriptions">Descriptions:</label> 
+        </div>
+        <div class="col-75">
+            <textarea name="descriptions" id="descriptions" placeholder="Enter descriptions"><%= desCate %></textarea><br>
+            <span class='success'><%= success %></span>
+        </div>
+      </div>
+    
+    
+    <input type="submit" name="submit" value="Add new category">  
+  </form>
+  <a href="admin"><button>Back</button></a>
+</div>
+</body>
+</html>

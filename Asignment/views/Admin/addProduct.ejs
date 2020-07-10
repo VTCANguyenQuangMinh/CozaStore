@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>  
+<html>
+    <head>
+        <link rel="stylesheet" href="\css\cssforAddPr.css">
+        <title>Add new product</title>
+    </head>
+<body>  
+<div class="container">
+    <div class="center">
+        <h1>Add new product</h1>
+    </div>
+    <br><br>
+    <form method="post" action="addProduct" class="needs-validation" enctype="multipart/form-data">  
+        <div class="row">
+          <div class="col-25">
+            <label for="name">Name product:</label>
+          </div>
+          <div class="col-75">
+            <input type="text" name="name" id="name" value="<%= objForm.name %>" placeholder="Enter product name" required>
+            <span class="error"><%= objForm.errName %></span>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+                <label for="picture">Picture:</label> 
+            </div>
+            <div class="col-75" >
+                <div class="colImg">
+                  <input type="file" name="picture" id="picture" value="" required>
+                </div>
+                <div id ="demo"></div>
+                <span class='error'><%= objForm.errImg %></span>
+                <a class='btnMore' onclick="add_child()">Add more photo</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="price">Price:</label> 
+            </div>
+            <div class="col-75">
+              <input type="text" name="price" id="price" value="<%= objForm.price %>" placeholder="Enter product price" required>
+              <span class="error"><%= objForm.errPrice %></span>
+              
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label>Sizes:</label> 
+            </div>
+            <div class="col-75">
+              <div class="col-50">
+                <div class="col-50">
+                  <label for="Size">Sizes:</label> 
+                </div>
+                <div class="col-50">
+                  <div class="col-100">
+                    <input type="text" name="Size" value="" required>
+                  </div>
+                  <div id='demo1'></div>
+                </div>
+              </div>
+              <div class="col-50">
+                <div class="col-50">
+                  <label for="SizeQuantity">Quantity:</label> 
+                </div>
+                <div class="col-50">
+                  <div class="col-100">
+                    <input type="number" name="SizeQ" min='0' value="" required>
+                  </div>
+                  <div id='demo2'></div>
+                </div>
+              </div>
+              <span class='error'><%= objForm.errSize %></span>
+            </div>
+            <a class='btnMore' onclick="add_child1()">Add more size</a>
+        </div>
+          
+        <div class="row">
+            <div class="col-25">
+              <label>Colors:</label> 
+            </div>
+            <div class="col-75">
+              <div class="col-50">
+                
+                <div class="col-50">
+                  <label for="Color">Colors:</label> 
+                </div>
+                <div class="col-50">
+                  <div class="col-100">
+                    <input type="text" name="Color" id="Color" required>
+                  </div>
+                  <div id='demo3'></div>
+                </div>
+              </div>
+              <div class="col-50">
+                <div class="col-50">
+                  <label for="ColorQ">Quantity:</label> 
+                </div>
+                <div class="col-50">
+                  <div class="col-100">
+                    <input type="number" name="ColorQ" min='0' value="" required>
+                  </div>
+                  <div id='demo4'></div>
+                  
+                </div>
+              </div>
+              <span class='error'><%= objForm.errColor %></span>
+              
+            </div>
+            <a class='btnMore' onclick="add_child2()">Add more color</a>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="Categorys">Categories</label> 
+            </div>
+            <div class="col-75">
+              <% Category.forEach(element=>{ %>
+              <div class="col-100">
+                <input type="checkbox" name="Categories" value="<%= element.name %>">  <%= element.name %><br>
+              </div>
+              <% }); %>
+              <span class='error'><%= objForm.errCategories %></span>
+            </div>
+          </div>
+  
+        <div class="row">
+          <div class="col-25">
+            <label for="descriptions">Descriptions:</label> 
+          </div>
+          <div class="col-75">
+              <textarea name="descriptions" id="descriptions" placeholder="Enter descriptions"><%= objForm.description %></textarea><br>
+              
+          </div>
+          <span class='success'><%= objForm.success %></span>
+        </div>
+        
+        
+      
+      <input type="submit" name="submit" value="Add new product">  
+    </form>
+    <a href="admin"><button>Back</button></a>
+</div>
+
+<script>
+    function add_child() {
+
+     
+     //tạo phần tử div    
+      var div = document.createElement("div");
+
+       //Add class cho div
+       div.classList.add('colImg');
+
+      // tạo phần tử input
+      var input = document.createElement("input");
+
+      //add thuộc tính cho input
+      input.type = 'file';
+      input.name = 'picture';
+      input.required = true;
+
+
+      //lồng input vào trong div
+      div.appendChild(input);
+
+      var divmain = document.getElementById("demo");
+      
+      divmain.appendChild(div);
+    }
+
+
+    function add_child1(){
+      // <div class="col-100">
+      //    <input type="text" name="Size" id="Size" value="M">
+      // </div>
+
+     //tạo phần tử div    
+      var div = document.createElement("div");
+
+       //Add class cho div
+       div.classList.add('col-100');
+
+      // tạo phần tử input
+      var input = document.createElement("input");
+
+      //add thuộc tính cho input
+      input.type = 'text';
+      input.name = 'Size';
+      input.required = true;
+
+
+      //lồng input vào trong div
+      div.appendChild(input);
+
+      var divmain = document.getElementById("demo1");
+      
+      divmain.appendChild(div);
+
+      // <div class="col-100">
+      //   <input type="number" name="SizeQuantity" min='0' id="SizeQuantity" value="">
+      // </div>
+
+      //tạo phần tử div    
+      var div1 = document.createElement("div");
+
+       //Add class cho div
+       div1.classList.add('col-100');
+
+      // tạo phần tử input
+      var input1 = document.createElement("input");
+
+      //add thuộc tính cho input
+      input1.type = 'number';
+      input1.name = 'SizeQ';
+      input1.required = true;
+
+      input1.min = '0'
+
+      //lồng input vào trong div
+      div1.appendChild(input1);
+
+      var divmain1 = document.getElementById("demo2");
+      
+      divmain1.appendChild(div1);
+    }
+
+    function add_child2(){
+      // <div class="col-100">
+      //   <input type="color" name="Color" id="Color" value="#00ff00">
+      // </div>
+
+     //tạo phần tử div    
+      var div = document.createElement("div");
+
+       //Add class cho div
+       div.classList.add('col-100');
+
+      // tạo phần tử input
+      var input = document.createElement("input");
+
+      //add thuộc tính cho input
+      input.type = 'text';
+      input.name = 'Color'
+      input.required = true;
+
+
+      //lồng input vào trong div
+      div.appendChild(input);
+
+      var divmain = document.getElementById("demo3");
+      
+      divmain.appendChild(div);
+
+
+      // <div class="col-100">
+      //   <input type="number" name="ColorQuantity" min='0' id="ColorQuantity" value="">
+      // </div>
+
+      //tạo phần tử div    
+      var div1 = document.createElement("div");
+
+       //Add class cho div
+       div1.classList.add('col-100');
+
+      // tạo phần tử input
+      var input1 = document.createElement("input");
+
+      //add thuộc tính cho input
+      input1.type = 'number';
+      input1.name = 'ColorQ';
+      input1.min = '0';
+      input1.required = true;
+
+      //lồng input vào trong div
+      div1.appendChild(input1);
+
+      var divmain1 = document.getElementById("demo4");
+      
+      divmain1.appendChild(div1);
+    }
+</script>
+</body>
+</html>

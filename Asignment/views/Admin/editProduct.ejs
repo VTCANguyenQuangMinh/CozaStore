@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
+    integrity='sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4'crossorigin= "anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+
+    <link rel="stylesheet" href="css\cssforeditPr.css">
+</head>
+<body>
+    <div class="containerr">
+        <h1 style='Text-align: center; margin: 50px 0;'>Chọn sản phẩm muốn chỉnh sửa</h1>
+        
+
+        <div class='tabcontent'>
+           
+            <% products.forEach(E=>{ %>
+            <div class='card'>
+                <div class='img-product'>
+                    <div class='left-imgPr'>
+                        
+                        <% E.imgLink.forEach(img=>{ %>
+                        <div class="dropdown">
+                            <img src="<%= '/pictures/'+img %>" alt="IMG-PRODUCT1">
+                            <div class="dropdown-content">
+                                <img src="<%= '/pictures/'+img %>" alt="IMG-PRODUCTExtend">
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div > 
+                    <div class='main-imgPr'><img src="<%= '/pictures/'+E.imgLink[0] %>" alt="IMG-PRODUCT Main"></div>
+                </div>
+                <div class='card-body'>
+                    <div class='card-title'>
+                        <b><%= E.name %></b>
+                    </div>
+                    <p class='card-text'>
+                        <%= '$'+E.price %>
+                    </p>
+                    <p>Size: </p>
+                    <div >
+                        <% E.size.forEach(Size=>{ %>
+                        <div class='tableBody'>
+                            <div>
+                                <%= 'Size name: '+Size.sizeName %>
+                            </div>
+                            <div>
+                                <%= 'Quantity: '+Size.quantity %>
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+                    <p>Color: </p>
+                    <div>
+                        <% E.color.forEach(Color=>{ %>
+                        <div class='tableBody'>
+                            <div>
+                                Color name: <%= Color.colorName %>
+                            </div>
+                            <div>
+                                Quantity: <%= Color.quantity %>
+                            </div>
+                        </div>
+                        <% }) %>
+                    </div>
+
+                </div>
+
+                <div class = 'infor'>
+                    <div style='font-size: 20px;'>Id: <%= E._id %></div>
+                    <div>Status: <b><%= E.status %></b></div>
+                    <div>Categories: 
+                        <% E.categories.forEach(ele=>{ %>
+                            <span> <%= ele %>.</span>
+                        <% }) %>
+                    </div>
+                    <div>Description: <%= E.description %></div>
+                    <div class="dropdown">
+                        <p class='button'>Options</p>
+                        <div class="dropdown-content">
+                            <div>
+                                <a href="<%= 'updateProduct/:' + E._id %>"><button>Update</button></a>
+                            </div>
+                            <div>
+                                <button onclick='myFunction("<%= E._id %>")'>Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+
+            <div id="id01" class="modal">
+                <div class="modal-content">
+                    <div class="contain" style="background-color:#f1f1f1">
+                        <h4 style="text-align:center; margin-top: 40px;">Bạn có chắc muốn xóa sản phẩm này?</h4>
+                        <div style="display: flex; margin: 40px;">
+                            <div style="width:100%;margin: 15px;"><button style="width:100%" class="btn" type="button" onclick="document.getElementById('id01').style.display='none'">Hủy</button></div>
+                            <div style="width:100%;margin: 15px;"><a id="id02" href="#"><button class="btn btn-danger" style="width:100%">Xóa sản phẩm </button></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        </div>
+
+        <a href='admin'>
+            <button class='goback'>Back</button>
+        </a>
+        
+    </div>
+
+    <script>
+
+        function myFunction(id){
+            var link = "deleteProduct/:" + id;
+            document.getElementById('id01').style.display='block';
+            document.getElementById('id02').href = link;
+        }
+
+        var modal = document.getElementById('id01');
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

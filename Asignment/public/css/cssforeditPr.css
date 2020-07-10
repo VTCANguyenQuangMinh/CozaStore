@@ -1,0 +1,175 @@
+.tabcontent {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5%;
+}
+
+a, a:active, a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.tabcontent > div{
+    border-bottom: 1px solid gray;
+    padding: 15px;
+}
+
+.tabcontent > div:hover{
+    box-shadow: 0px 0px 15px gray;
+    z-index: 1;
+}
+
+div.card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    position: relative;
+}
+
+div.card>div{
+    margin: 10px;
+}
+
+.img-product{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-imgPr{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+img{
+    width: 100%;
+}
+
+.left-imgPr{
+    width: 30%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.card-body{
+    width: 45%
+}
+
+.tableBody{
+    display: flex;
+    flex-direction: row;
+}
+
+.tableBody div{
+    padding-left: 10%;
+    width: 45%;
+}
+
+.infor{
+    width: 25%;
+}
+
+.infor>div{
+    margin: 5px 0;
+}
+
+.card-img-top{
+    width:100%;
+    height: auto;
+}
+
+div .card-title{
+    height: 70px;
+    width: 100%;
+    
+}
+
+
+span.sale-percent{
+    opacity: 0.7;
+    font-size: 15px;
+}
+
+span.ori-price {
+    text-decoration: line-through;
+    opacity: 0.7;
+    font-size: 15px;
+
+}
+
+div .card-text{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+div.star i{
+    color: yellow;
+    letter-spacing: -2px;
+    font-size: 18px;
+}
+
+.button, button{
+    border: none;
+    margin-top: 7px;
+    padding: 7px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+button{
+    width: 100%;
+}
+
+.button:hover, button:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.goback{
+    margin:20px;
+    margin-left: 5%;
+    width: 80px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    }
+    .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    }
+
+    .contain{
+        height: 200px;
+    }

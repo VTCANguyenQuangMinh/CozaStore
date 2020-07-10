@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modalForm {
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 5px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 65%; /* Could be more or less, depending on screen size */
+
+  display: flex;
+  flex-direction: row;
+  background-color: #F8F8F8;
+  position: relative;
+  border-radius: 10px;
+}
+
+/* The Close Button (x) */
+.close {
+  text-decoration: none;
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  padding: 0 10px 0;
+  background: #e2e2e2;
+  border-radius: 50px;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.modal-content>div{
+  background-color: white;
+  width: 100px;
+  padding: 16px;
+}
+
+.right-content{
+  flex-grow: 3;
+  border-radius: 10px;
+}
+
+.left-content{
+	flex-grow: 5;
+    margin: 15px;
+    border-radius: 7px;
+}
+
+.tab {
+	border-bottom: 1px solid #e2e2e2;
+  	overflow: hidden;
+    margin-bottom: 20px;
+}
+
+
+.img_form{
+    width: 100%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  margin-left: 10px;
+  color: black;
+  background-color: white;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	color: #1ba8ff;
+  border-bottom: 3px solid #1ba8ff;
+  background-color: white;
+}
+
+
+/* Create an active/current tablink class */
+.tab button.active {
+  color: #1ba8ff;
+  border-bottom: 3px solid #1ba8ff;
+  background-color: white;
+}
+  
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+label {
+  padding: 12px;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.col-75 > input[type=text], select, input[type=password], input[type=email]{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.error{
+  color: red;
+}
+
+.success{
+  color: green;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sub{
+    background-color: #f7d749;
+    border-radius: 5px;
+    width: 100%;
+    height: 40px;
+    border: none;
+}
+
+.sub.active{
+    border: #8cdcfe;
+}
+
+input[type=radio]{
+    margin: 10px 10px 0 20px;
+}
+
+.btnMore{
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}

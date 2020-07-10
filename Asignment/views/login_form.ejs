@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/cssforLoginForm.css">
+    <title>Login - Regist</title>
+    <script>
+        function showForm(){
+            if("<%= sucess %>" != '' || "<%= EmailErr %>" != '')
+            {
+                document.getElementById('regisOpen').click();
+            }
+        }
+
+    </script>
+</head>
+<body onload="showForm()">
+    <div id="id01" class="modalForm">
+  
+        <div class="modal-content">
+        
+            <a href="/" class="close" title="Close Modal">&times;</a>
+
+            <div class="right-content">
+                <div id="L1" class="tabcontent">
+                    <h2> LOG IN </h2>
+                </div>
+                <div id="L2" class="tabcontent">
+                    <h2> REGISTER </h2>
+                </div>
+                <div style="margin-top: 30px;">
+                    <img class="img_form" src="https://pipe.tikicdn.com/media/upload/2018/10/12/2a3acb91a35d45e1b4b7c96912a0c84a.png">
+                </div>
+            </div>
+
+            <div class="left-content">
+                <div class="tab">
+                <button class="tablinks" onclick="openTab(event, 'Login','L1')" id="defaultOpen">Log in</button>
+                <button class="tablinks" onclick="openTab(event, 'Register', 'L2')" id="regisOpen">Register</button>
+                </div> 
+            
+                <div id="Login" class="tabcontent" >
+                <form id="form-login" method="post" action="/loginForm">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="uname">Email</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="Uname" placeholder="Enter your email" value="" name="uname" required>
+                            <span class="error" id="UnameErr"></span><br>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="psw">Password</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="password" id="pwd" placeholder="Enter your password" name="pwd" required>
+                            <span class="error" id="pwdErr"><%= loginErr %></span><br>
+                            <span class="success"><%= sucessLogin %></span><br>
+                        </div>
+                    </div>
+                    <input type="hidden" name="typeForm" value="login">
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            
+                            <button type="submit" class="sub">Log in</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            
+                <div id="Register" class="tabcontent">
+                <form id="form-regis" method="post" action="/loginForm">
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="name">Full name</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" id="nameRe" placeholder="Enter your full name" name="name" value="" required>
+                            <span class="error" id="nameReErr"></span><br>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="address">Address</label>
+                        </div>
+                        <div class="col-75">
+        
+                            <input type="text" id="addressRe" placeholder="Enter your address" name="address" value="" required>
+        
+                            <div id ="demo"></div>
+                            <span class="error" id="addressReErr"></span><br>
+                            <a class='btnMore' onclick="add_child() "style='color:white'>Add more address</a>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="email" id="emailRe" placeholder="Enter your email" name="email" value="" required>
+                            <span class="error" id="emailReErr"><%= EmailErr %></span><br>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-25">
+                            <label for="pass">Password</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="password" id="passRe" placeholder="Enter password" name="pass" required>
+                            <span class="success" ><%= sucess %></span><br>
+                        </div>
+                    </div>
+        
+                    <input type="hidden" name="typeForm" value="regis">
+        
+                    <div class="row">
+                        <div class="col-25">
+                        </div>
+                        <div class="col-75">
+                            
+                            <button type="submit" class="sub">Register</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+             
+    
+            </div>
+        
+        </div>
+    </div>
+    
+    <script src="js/checkFormLogin.js"></script>
+    <script src="js/JSforFormLogin.js"></script>
+    <script>
+    function add_child() {
+    
+    //<input type="text" id="addressRe" placeholder="Enter your address" name="address" value="" required>
+    
+     // tạo phần tử input
+     var input = document.createElement("input");
+    
+     //add thuộc tính cho input
+     input.type = 'text';
+     input.name = 'address';
+     input.required = true;
+     input.placeholder="Enter your address"
+    
+     var divmain = document.getElementById("demo").parentNode;
+     var childElement = document.getElementById("demo")
+     divmain.insertBefore(input, childElement);
+    }
+    </script>
+    
+</body>
+</html>
+
